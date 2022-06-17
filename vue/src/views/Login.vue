@@ -1,4 +1,5 @@
 <template>
+<div>
   <div>
     <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
@@ -30,7 +31,6 @@
         <input id="password" name="password" type="password" v-model="user.password" autocomplete="current-password" required="" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password" />
       </div>
     </div>
-
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <input id="remember-me" name="remember-me" type="checkbox" v-model="user.remember" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
@@ -51,6 +51,7 @@
       </button>
     </div>
   </form>
+</div>
 </template>
 
 <script setup>

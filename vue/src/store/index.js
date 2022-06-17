@@ -10,20 +10,22 @@ const store = createStore({
     },
     getters: {},
     actions: {
-        register({ commit }, user) {
+        register({commit}, user) {
             return axiosClient.post('/register', user)
-            .then((data) => {
-                commit('setUser', data);
+              .then((response) => {
+                commit('setUser', data.user);
+                commit('setToken', data.token)
                 return data;
-            })
-        },
-        login({ commit }, user) {
+              })
+          },
+          login({commit}, user) {
             return axiosClient.post('/login', user)
-            .then((data) => {
-                commit('setUser', data);
+              .then(({data}) => {
+                commit('setUser', data.user);
+                commit('setToken', data.token)
                 return data;
-            })
-        },
+              })
+          },
     },
     mutations: {
         logout: (state) => {
